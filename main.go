@@ -12,6 +12,9 @@ func main() {
 	app.Use(inject(db))
 
 	app.GET("/all", controllers.All)
+	app.GET("/allv2", controllers.Allv2)
 	app.GET("/", controllers.Get)
-	app.Run(":1234")
+
+	app.GET("/api", controllers.GetApi)
+	app.Run(":1235")
 }

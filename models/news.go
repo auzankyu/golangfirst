@@ -1,4 +1,4 @@
-package main
+package models
 
 type News struct {
 	Date string `json:"date"`
