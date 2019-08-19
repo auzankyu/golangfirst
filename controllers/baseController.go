@@ -1,26 +1,27 @@
 package controllers
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func success(c *gin.Context, data interface{}) {
 	var result gin.H
 	result = gin.H{
-		"code": http.StatusOK,
-		"message": "success",
-		"data": data,
+		"responseCode":    http.StatusOK,
+		"responseMessage": "success",
+		"data":            data,
 	}
 	c.JSON(http.StatusOK, result)
 }
 
-func error(c *gin.Context) {
+func error(c *gin.Context, data interface{}) {
 	var result gin.H
 	result = gin.H{
-		"code": http.StatusNotFound,
-		"message": "data not found",
-		"data": nil,
+		"responseCode":    http.StatusNotFound,
+		"responseMessage": "error",
+		"data":            data,
 	}
 	c.JSON(http.StatusNotFound, result)
 }

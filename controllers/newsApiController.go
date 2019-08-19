@@ -2,15 +2,16 @@ package controllers
 
 import (
 	"encoding/json"
-	models2 "ginproject/models"
-	"github.com/gin-gonic/gin"
-	"github.com/labstack/gommon/log"
+	"golangapi/models"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/labstack/gommon/log"
 )
 
 func GetApi(c *gin.Context) {
-	var obj models2.ResponseSource
+	var obj models.ResponseSource
 	endpoint := "https://newsapi.org/v2/sources?apiKey=7f0f2964ca7d479ea1b25ff492de4e71"
 
 	response, err := http.Get(endpoint)
